@@ -3,6 +3,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MaintenanceProvider } from "@/context/MaintenanceContext";
+import { MaintenanceCheck } from "@/components/MaintenanceCheck";
 import Index from "./pages/Index";
 import CategoryPage from "./pages/CategoryPage";
 import AdminLogin from "./pages/AdminLogin";
@@ -23,35 +25,37 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 
-// Create a new QueryClient instance
-
 function App() {
   return (
     <TooltipProvider>
       <Toaster />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/category/:category" element={<CategoryPage />} />
-          <Route path="/article/:slug" element={<ArticlePage />} />
-          <Route path="/games" element={<GamesPage />} />
-          <Route path="/tech" element={<TechPage />} />
-          <Route path="/stocks" element={<StocksPage />} />
-          <Route path="/entertainment" element={<EntertainmentPage />} />
-          <Route path="/gadgets" element={<GadgetsPage />} />
-          <Route path="/product/:id" element={<ProductDetailPage />} />
-          <Route path="/product-reviews/:id" element={<ProductReviewsPage />} />
-          <Route path="/comparison" element={<ComparisonPage />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<TermsAndConditions />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/admin/edit/:id" element={<EditBlogPage />} />
-          <Route path="/admin/popular-products" element={<PopularProductsPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <MaintenanceProvider>
+        <BrowserRouter>
+          <MaintenanceCheck>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/category/:category" element={<CategoryPage />} />
+              <Route path="/article/:slug" element={<ArticlePage />} />
+              <Route path="/games" element={<GamesPage />} />
+              <Route path="/tech" element={<TechPage />} />
+              <Route path="/stocks" element={<StocksPage />} />
+              <Route path="/entertainment" element={<EntertainmentPage />} />
+              <Route path="/gadgets" element={<GadgetsPage />} />
+              <Route path="/product/:id" element={<ProductDetailPage />} />
+              <Route path="/product-reviews/:id" element={<ProductReviewsPage />} />
+              <Route path="/comparison" element={<ComparisonPage />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin" element={<AdminPanel />} />
+              <Route path="/admin/edit/:id" element={<EditBlogPage />} />
+              <Route path="/admin/popular-products" element={<PopularProductsPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </MaintenanceCheck>
+        </BrowserRouter>
+      </MaintenanceProvider>
     </TooltipProvider>
   );
 }

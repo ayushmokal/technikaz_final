@@ -8,6 +8,7 @@ import { ProductForm } from "@/components/admin/ProductForm";
 import { BlogAnalytics } from "@/components/admin/BlogAnalytics";
 import { BlogManager } from "@/components/admin/BlogManager";
 import { ProductManager } from "@/components/admin/ProductManager";
+import { MaintenanceControl } from "@/components/admin/MaintenanceControl";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Folders, Smartphone, Star } from "lucide-react";
 import { type Category, categories } from "@/types/blog";
@@ -210,6 +211,7 @@ export default function AdminPanel() {
               <TabsTrigger value="add-product">Add Product</TabsTrigger>
               <TabsTrigger value="expert-reviews">Expert Reviews</TabsTrigger>
               <TabsTrigger value="amazon-ads">Amazon Ads</TabsTrigger>
+              <TabsTrigger value="maintenance">Maintenance</TabsTrigger>
               <TabsTrigger value="logs">Logs</TabsTrigger>
             </TabsList>
 
@@ -251,6 +253,11 @@ export default function AdminPanel() {
             <TabsContent value="amazon-ads" className="space-y-4">
               <h2 className="text-xl font-semibold text-left">Amazon Product Advertising</h2>
               <AmazonAdManager />
+            </TabsContent>
+
+            <TabsContent value="maintenance" className="space-y-4">
+              <h2 className="text-xl font-semibold text-left">Site Maintenance</h2>
+              <MaintenanceControl />
             </TabsContent>
 
             <TabsContent value="logs" className="space-y-4">
