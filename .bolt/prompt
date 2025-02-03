@@ -1,0 +1,45 @@
+### 1. *Functional Requirements*
+
+- ***Content Management***
+    - **Admin Panel** for **Content Creation & Management from where blogs will be posted on the website adding title , content , selecting category / sub category , adding seo details**
+    - **Blog Posting**
+    - **Content Categorization**
+    
+    | main category  | sub category  |
+    | --- | --- |
+    | Games | PS5, XBOX , Nintendo , PC  |
+    | Entertainment | Movies , Series , Comics  |
+    | Mobiles  | Smartphone , Accessories  |
+    | tech | Tech Deals , News  |
+    | Stocks  |  |
+    - **Commenting System** below each article
+- ***Search Functionality***
+    - Full-Text Search across Articles
+    - Filter and Sort Results by Category
+- *Multimedia Support*
+    - Video and Image Embedding in Articles
+- *Notifications*
+    - Newsletter and sign up area from Newsletters
+- ***Analytics and Reporting***
+    - User Analytics Dashboard
+    - Content Performance Metrics
+    - SEO Optimization in all articles
+- ***Security Features***
+    - User Authentication and Authorization
+    - Data Encryption (HTTPS)
+- *User Management*
+    - User Registration & Login
+    - Profile Management
+    - Password Recovery
+    - saved aricles
+
+- Personalized Content Recommendations
+
+Not required as of now for sure.
+
+Community Features*
+- Forums and Discussion Boards
+
+- Messaging Between Users
+- Email and In-App Notifications for New Content
+    - Push Notifications for Mobile Users
